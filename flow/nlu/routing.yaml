@@ -1,0 +1,14 @@
+triggers:
+  - expect: dialogflow
+    integration: integration.google.dialogflow.dialogflow
+
+steps:
+  - match:
+      ^smalltalk\.:
+        flow: flow.nlu.smalltalk
+        data: (@ flow )
+      ^shipping:
+        flow: flow.nlu.shipping
+        data: (@ flow )
+    default:
+      flow: flow.catchall

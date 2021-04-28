@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1e9d489a-e75c-4969-ac58-5dc66dfaabad",
+    "data": [
+      {
+        "text": "Can you ship to ",
+        "userDefined": false
+      },
+      {
+        "text": "Japan",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": true
+      },
+      {
+        "text": " or ",
+        "userDefined": false
+      },
+      {
+        "text": "Taiwan",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "28b20a92-d050-4e1f-b9de-7c814fdf7ccc",
+    "data": [
+      {
+        "text": "shipping",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "acf92032-8742-40b1-a6bc-81161dc52d85",
+    "data": [
+      {
+        "text": "Do you ship to ",
+        "userDefined": false
+      },
+      {
+        "text": "Canada",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

@@ -1,0 +1,12 @@
+triggers:
+  - catchall
+
+steps:
+  - say: Sorry, I don't understand. Would you like to leave a message?
+    quick_replies:
+      - text: Yes, I want to leave a message
+        action:
+          flow: flow.escalate.ticket
+      - text: No thanks
+        action:
+          flow: flow.start

@@ -1,0 +1,5 @@
+dialogflow.service_account_key: xxx
+zendesk.support.subdomain: zendesk_domain_name
+zendesk.support.bot_agent_email: username@domain.com
+zendesk.support.bot_agent_api_token: xxx
+zendesk.support.target_password: xxx

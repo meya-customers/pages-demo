@@ -1,0 +1,17 @@
+triggers:
+  - type: page_open
+    when: (@ not thread.open_page )
+  - keyword: start
+
+steps:
+  - thread_set:
+      open_page: true
+  - say: Hey, welcome! What can I help you with?
+    quick_replies:
+      - General questions
+      - Product questions
+      - Orders & order status
+      - text: Shipping & delivery
+        action:
+          flow: flow.nlu.shipping
+      - Returns
