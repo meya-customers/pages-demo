@@ -6,7 +6,7 @@ steps:
     quick_replies:
       - text: Yes, I want to leave a message
         action:
-          flow: flow.escalate.ticket
+          flow: flow.front.human
       - text: No thanks
         action:
           flow: flow.start
