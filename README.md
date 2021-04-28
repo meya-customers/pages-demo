@@ -39,3 +39,4 @@ meya push --force --build-image
 ## Setup guides
 * [Front](https://docs.meya.ai/docs/how-to-setup-a-front-integration)
 * [Orb](https://docs.meya.ai/docs/how-to-set-up-an-orb-integration)
+* [Dialogflow](https://docs.meya.ai/docs/how-to-set-up-a-dialogflow-integration)
