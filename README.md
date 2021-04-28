@@ -1,4 +1,4 @@
-# zendesk-dialogflow-starter
+# Front demo
 
 Basic template BFML and Python code that runs on Meya.
 
@@ -37,6 +37,5 @@ meya push --force --build-image
 ```
 
 ## Setup guides
-Zendesk Support: https://www.loom.com/share/0ec893e5642d4df592f7b10ca4e9abac
-
-Dialogflow: https://www.loom.com/share/2c29ee73755245bebf4deac6f3d34435
+* [Front](https://docs.meya.ai/docs/how-to-setup-a-front-integration)
+* [Orb](https://docs.meya.ai/docs/how-to-set-up-an-orb-integration)

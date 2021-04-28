@@ -1,6 +1,6 @@
 triggers:
   - expect: dialogflow
-    integration: integration.google.dialogflow.dialogflow
+    integration: integration.google.dialogflow
 
 steps:
   - match:
