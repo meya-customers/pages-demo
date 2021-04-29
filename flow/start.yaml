@@ -8,10 +8,18 @@ steps:
       open_page: true
   - say: Hey, welcome! What can I help you with?
     quick_replies:
-      - General questions
-      - Product questions
-      - Orders & order status
+      - text: General questions
+        action:
+          flow: flow.faq.general
+      - text: Product questions
+        action:
+          flow: flow.faq.product
+      - text: Orders & order status
+        action:
+          flow: flow.faq.orders
       - text: Shipping & delivery
         action:
           flow: flow.nlu.shipping
-      - Returns
+      - text: Returns
+        action:
+          flow: flow.faq.returns

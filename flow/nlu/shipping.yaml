@@ -7,14 +7,11 @@ steps:
     else:
       jump: full_list
   - flow_set:
-      countries: (@ flow.dialogflow_response.queryResult.parameters.get("geo-country")
-        )
-  - if: (@ flow.countries|length > 0 )
+      country: (@ flow.dialogflow_response.queryResult.parameters.get("geo-country"))
+  - if: (@ flow.country|length > 0 )
     then: next
     else:
       jump: full_list
-  - flow_set:
-      country: (@ flow.countries[0] )
   - say: Yes 🎉 we ship to (@ flow.country ) for an additional $99.99
   - delay: 1
   - say: Note that this includes all taxes and duties.

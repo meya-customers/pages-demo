@@ -1,8 +1,6 @@
-triggers:
-  - keyword: hi
-
 steps:
-  - say: Hello!
+  - ask: Enter an order number.
+  - say: Order number (@ flow.result ) is on its way.
     quick_replies:
       - text: Back
         action:
