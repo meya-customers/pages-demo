@@ -1,3 +1,5 @@
+[![Meya build](https://github.com/meya-customers/front-demo/actions/workflows/meya.check-test.yaml/badge.svg)](https://github.com/meya-customers/front-demo/actions/workflows/meya.check-test.yaml)
+
 # Front demo
 
 Basic template BFML and Python code that runs on Meya.
