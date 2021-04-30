@@ -1,45 +1,28 @@
 steps:
-  - type: component.nlu.tokenize_text
-    text: (@ flow.result )
+  # get_intents takes in the user's text and returns flow.intents
+  - flow: flow.nlu.get_intents
+    data:
+      result: (@ flow.result )
+
+  # Loop through the intents
   - flow_set:
-      sentences: (@ flow.result )
       index: 0
-      intents:
 
-  - (detect)
-  - detect_dialogflow: (@ flow.sentences[flow.index] )
-    integration: integration.google.dialogflow
-    language: en
-    min_confidence: 0.1
-
-  - if: (@ flow.result != "fallback" )
-    then:
-      jump: add_intent_to_list
-    else: next
+  - (handle_intent)
+  - value: (@ flow.intents[flow.index] )
+    case:
+      account_login:
+        flow: flow.faq.account_login
+      connect_new_device:
+        flow: flow.faq.connect_new_device
+    default: next
 
   - (continue)
   - flow_set:
       index: (@ flow.index + 1 )
-  - if: (@ flow.index == flow.sentences | length )
-    then:
-      jump: end
+  - if: (@ flow.index == flow.intents | length )
+    then: next
     else:
-      jump: detect
+      jump: handle_intent
 
-  - (add_intent_to_list)
-  - if: (@ flow.intents )
-    then:
-      jump: append
-    else: next
-  - flow_set:
-      intents:
-        - (@ flow.result )
-  - jump: continue
-
-  - (append)
-  - flow_set:
-      intents: (@ flow.intents + [flow.result] )
-  - jump: continue
-
-  - (end)
-  - say: The intents => (@ flow.intents )
+  - end
