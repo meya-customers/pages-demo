@@ -16,6 +16,6 @@ steps:
   - say: One moment while I find someone to help...
   - type: meya.front.component.conversation.update
     integration: integration.front
-    assignee_email:
+    assignee_email: (@ vault.front.agent_email )
 
   - note: This note appears after agent escalation
