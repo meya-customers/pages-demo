@@ -4,6 +4,18 @@
 
 Basic template BFML and Python code that runs on Meya.
 
+# Video walkthrough
+In this demo, you'll learn how to:
+
+* extract multiple intents from an email
+* handle email and chat with separate flows
+* transfer control to and from a Front agent
+
+Video walkthrough:
+* [Part 1: Demo](https://www.loom.com/share/9d5416824eb64395835f9ff563733cf8)
+* [Part 2: Email use-case](https://www.loom.com/share/fbc596c60741481e93e69461406f6183)
+* [Part 3: Orb use-case](https://www.loom.com/share/344d65e80fa944f998fefdadbf651c72)
+
 ## Setup
 
 ```shell script
