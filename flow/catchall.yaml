@@ -1,7 +1,15 @@
-#triggers:
-#  - catchall
+triggers:
+  - catchall
 
 steps:
+  - if: (@ flow.event.data.integration_id == "integration.front" )
+    then:
+      flow: flow.front.inbound
+      transfer: true
+      data:
+        result: (@ flow.result )
+    else: next
+
   - say: Sorry, I don't understand. Would you like to leave a message?
     quick_replies:
       - text: Yes, I want to leave a message
