@@ -4,3 +4,4 @@ api_token: (@ vault.front.api_token )
 bot_teammate_email: (@ vault.front.bot_teammate_email )
 channel_id: (@ vault.front.channel_id )
 unassign_mode: agent
+client_token: (@ vault.front.client_token )
