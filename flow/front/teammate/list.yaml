@@ -2,6 +2,8 @@ triggers:
   - keyword: front_list_teammates
 
 steps:
+  # This component lists information about all of your Front agents. You can also use the teammates.get
+  # component to retrieve a specific teammate.
   - type: meya.front.component.teammates.list
     integration: integration.front
 

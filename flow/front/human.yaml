@@ -11,6 +11,9 @@ steps:
   - say: Nice to meet, you (@ user.name )! 👋
 
   - (escalate)
+  # We can route to different flows depending on whether we're in tracking mode or ticketing mode. In this case,
+  # if we're in tracking mode, we'll assign the conversation to an agent. If we're in ticketing mode, we'll just
+  # create the conversation.
   - if: (@ vault.front.mode == "ticketing" )
     then:
       flow: flow.front.ticketing.create

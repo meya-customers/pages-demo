@@ -2,6 +2,8 @@ triggers:
   - keyword: front_list_teams
 
 steps:
+  # List information about the team, such as the name and Front ID. To retrieve a specific team, use the teams.get
+  # component.
   - type: meya.front.component.teams.list
     integration: integration.front
 

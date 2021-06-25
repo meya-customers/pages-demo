@@ -1,9 +1,11 @@
 triggers:
   - keyword: front_update_contact
 steps:
+  # You could also specify the user's handle (custom ID) instead of the Front ID.
   - ask: Contact_id?
   - flow_set: contact_id
 
+  # This is an example property we can update. There are others available as well.
   - ask: Spammer?
     buttons:
       - text: Yes

@@ -103,7 +103,7 @@ steps:
     # the thread is unlinked from the conversation. If unlinked, you'll need to use the
     # meya.front.component.conversation.update component to send more info from the user to the agent.
     link: true
-    send_transcript: true
+    send_transcript: true # Optional
     thread_ref: (@ thread.id )
     integration: integration.front
 

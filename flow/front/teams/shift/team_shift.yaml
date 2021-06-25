@@ -2,7 +2,7 @@ triggers:
   - keyword: front_get_teammate_shift
 
 steps:
-  # Retrieve the support team's shift schedule from Front so we can determine if anyone is available.
+  # Retrieve the team's shift schedule from Front so we can determine if anyone is available.
   - type: meya.front.component.teams.shifts.list
     team_id: (@ vault.front.team_id )
     integration: integration.front
