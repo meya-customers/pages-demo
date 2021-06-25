@@ -5,3 +5,5 @@ front.channel_id: xxx
 front.bot_teammate_email: xxx
 front.agent_email: xxx
 front.client_token: xxx
+front.team_id: xxx
+front.mode: xxx

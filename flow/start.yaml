@@ -23,3 +23,6 @@ steps:
       - text: Returns
         action:
           flow: flow.faq.returns
+      - text: Talk to support
+        action:
+          flow: flow.front.human

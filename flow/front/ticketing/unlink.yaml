@@ -1,0 +1,8 @@
+triggers:
+  - agent_command: unlink
+
+steps:
+  # If the thread is linked to the Front conversation, the agent can break the link and reassign the conversation
+  # back to the bot by issuing the /unlink agent command in a comment.
+  - type: thread_unlink
+    integration: integration.front
