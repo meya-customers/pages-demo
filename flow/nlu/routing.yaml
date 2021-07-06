@@ -1,14 +1,17 @@
-#triggers:
-#  - expect: dialogflow
-#    integration: integration.google.dialogflow
+triggers:
+  - expect: dialogflow
+    integration: integration.google.dialogflow
 
 steps:
   - match:
       ^smalltalk\.:
         flow: flow.nlu.smalltalk
         data: (@ flow )
-      ^shipping:
-        flow: flow.nlu.shipping
+        transfer: true
+      ^shipping$:
+        flow: flow.shipping
         data: (@ flow )
+        transfer: true
     default:
       flow: flow.catchall
+      transfer: true

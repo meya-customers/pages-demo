@@ -2,9 +2,10 @@ triggers:
   - catchall
 
 steps:
-  - if: (@ flow.event.data.integration_id == "integration.front" )
+  - if: (@ flow.get("event") and flow.event.data.integration_id == "integration.front"
+      )
     then:
-      flow: flow.front.inbound
+      flow: flow.nlu.inbound
       transfer: true
       data:
         result: (@ flow.result )
@@ -15,6 +16,8 @@ steps:
       - text: Yes, I want to leave a message
         action:
           flow: flow.front.human
+          transfer: true
       - text: No thanks
         action:
-          flow: flow.start
+          flow: flow.restart
+          transfer: true

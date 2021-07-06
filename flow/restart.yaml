@@ -1,0 +1,26 @@
+steps:
+  - delay: 1
+  - say: (@ flow.text | default("What else would you like to do today?") )
+    quick_replies:
+      - text: Check my points balance
+        action:
+          flow: flow.balance
+          transfer: true
+      - text: General questions
+        action:
+          flow: flow.faq.general
+      - text: Product questions
+        action:
+          flow: flow.faq.product
+      - text: Orders & order status
+        action:
+          flow: flow.faq.orders
+      - text: Shipping & delivery
+        action:
+          flow: flow.shipping
+      - text: Returns
+        action:
+          flow: flow.faq.returns
+      - text: Talk to support
+        action:
+          flow: flow.front.human

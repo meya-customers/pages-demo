@@ -20,6 +20,8 @@ steps:
         action:
           flow: flow.start
           transfer: true
+  - flow: flow.restart
+    transfer: true
   - end
 
   - (full_list)
@@ -29,3 +31,5 @@ steps:
         action:
           flow: flow.start
           transfer: true
+  - flow: flow.restart
+    transfer: true

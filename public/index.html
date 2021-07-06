@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <title>Meya Front demo</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<script type="text/javascript">
+    localStorage.clear()
+    window.orbConfig = {
+        connectionOptions: {
+            gridUrl: "https://grid.meya.ai",
+            appId: "app-835c5d6355204c0ca732f683ab999198",
+            integrationId: "integration.orb",
+            userId: "u-0",
+            onFirstConnect: function (connectionData, next) {
+                next()
+                orb.openChat()
+            }
+        },
+        theme: {"brandColor": "#a655e4"},
+        windowApi: true,
+    };
+    (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+        script.src = "https://cdn.meya.ai/v2/orb.js";
+        document.body.appendChild(script);
+        var fontStyleSheet = document.createElement("link");
+        fontStyleSheet.rel = "stylesheet";
+        fontStyleSheet.href = "https://cdn.meya.ai/font/inter.css";
+        document.body.appendChild(fontStyleSheet);
+    })();
+</script>
+</body>
+</html>
