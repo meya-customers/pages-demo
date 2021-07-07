@@ -1,3 +1,6 @@
+triggers:
+  - keyword: restart
+
 steps:
   - delay: 1
   - say: (@ flow.text | default("What else would you like to do today?") )
@@ -6,21 +9,27 @@ steps:
         action:
           flow: flow.balance
           transfer: true
-      - text: General questions
+      - text: How do points and rewards work?
         action:
-          flow: flow.faq.general
-      - text: Product questions
+          flow: flow.faq.intro
+          transfer: true
+      - text: Browse available rewards
         action:
-          flow: flow.faq.product
-      - text: Orders & order status
+          flow: flow.rewards
+          transfer: true
+      - text: Check an order
         action:
-          flow: flow.faq.orders
-      - text: Shipping & delivery
+          flow: flow.order
+          transfer: true
+      - text: Shipping
         action:
-          flow: flow.shipping
+          flow: flow.faq.shipping
+          transfer: true
       - text: Returns
         action:
           flow: flow.faq.returns
+          transfer: true
       - text: Talk to support
         action:
           flow: flow.front.human
+          transfer: true

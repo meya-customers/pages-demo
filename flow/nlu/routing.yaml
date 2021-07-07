@@ -4,12 +4,44 @@ triggers:
 
 steps:
   - match:
-      ^smalltalk\.:
-        flow: flow.nlu.smalltalk
+      ^account_login$:
+        flow: flow.faq.account_login
+        data: (@ flow )
+        transfer: true
+      ^balance$:
+        flow: flow.balance
+        data: (@ flow )
+        transfer: true
+      ^connect_new_device$:
+        flow: flow.faq.connect_new_device
+        data: (@ flow )
+        transfer: true
+      ^human$:
+        flow: flow.front.human
+        data: (@ flow )
+        transfer: true
+      ^intro$:
+        flow: flow.faq.intro
+        data: (@ flow )
+        transfer: true
+      ^order$:
+        flow: flow.order
+        data: (@ flow )
+        transfer: true
+      ^returns$:
+        flow: flow.faq.returns
+        data: (@ flow )
+        transfer: true
+      ^rewards:
+        flow: flow.rewards
         data: (@ flow )
         transfer: true
       ^shipping$:
-        flow: flow.shipping
+        flow: flow.faq.shipping
+        data: (@ flow )
+        transfer: true
+      ^smalltalk\.:
+        flow: flow.nlu.smalltalk
         data: (@ flow )
         transfer: true
     default:

@@ -1,0 +1,7 @@
+steps:
+  - say: One moment while I find someone to help...
+
+  - type: meya.front.component.conversation.update
+    integration: integration.front
+    assignee_email:
+    # TODO subject: (@ flow.subject )

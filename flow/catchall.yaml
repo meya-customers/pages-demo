@@ -2,18 +2,23 @@ triggers:
   - catchall
 
 steps:
-  - if: (@ flow.get("event") and flow.event.data.integration_id == "integration.front"
+  - if: >-
+      (@
+        flow.get("event")
+        and flow.event.data.integration_id == "integration.front"
       )
-    then:
-      flow: flow.nlu.inbound
-      transfer: true
-      data:
-        result: (@ flow.result )
-    else: next
+    then: next
+    else:
+      jump: human
+  - flow: flow.nlu.inbound
+    transfer: true
+    data:
+      result: (@ flow.result )
 
-  - say: Sorry, I don't understand. Would you like to leave a message?
+  - (human)
+  - say: Sorry, I don't understand. Would you like to talk to customer support?
     quick_replies:
-      - text: Yes, I want to leave a message
+      - text: Yes
         action:
           flow: flow.front.human
           transfer: true

@@ -15,21 +15,11 @@ steps:
   - say: Yes 🎉 we ship to (@ flow.country ) for an additional $99.99
   - delay: 1
   - say: Note that this includes all taxes and duties.
-    quick_replies:
-      - text: Got it
-        action:
-          flow: flow.start
-          transfer: true
-  - flow: flow.restart
-    transfer: true
-  - end
+  - jump: end
 
   - (full_list)
   - say: We ship to US and Canada
-    quick_replies:
-      - text: Got it
-        action:
-          flow: flow.start
-          transfer: true
+
+  - (end)
   - flow: flow.restart
     transfer: true

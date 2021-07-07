@@ -1,0 +1,8 @@
+triggers:
+  - keyword: connect_new_device
+
+steps:
+  - say: To connect a new device, go to Settings -> Devices -> New and follow the
+      setup instructions.
+  - flow: flow.restart
+    transfer: true

@@ -1,3 +1,6 @@
+triggers:
+  - keyword: balance
+
 steps:
   - say: Please wait while I check your balance.
   - delay: 3
