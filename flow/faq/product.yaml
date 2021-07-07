@@ -1,6 +1,0 @@
-steps:
-  - say: We make and sell high quality widgets.
-    quick_replies:
-      - text: Back
-        action:
-          flow: flow.start

@@ -1,9 +1,0 @@
-triggers:
-  - keyword: hi
-
-steps:
-  - say: Hello!
-    quick_replies:
-      - text: Back
-        action:
-          flow: flow.start
