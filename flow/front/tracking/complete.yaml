@@ -1,0 +1,8 @@
+steps:
+  - say: Did you enjoy our service today?
+  - rating: faces
+    title: Satisfaction
+  - note: Rating (@ flow.result )
+  - say: Thank you!
+  - flow: flow.restart
+    transfer: true

@@ -11,6 +11,8 @@ steps:
       - Rewards
       - Shipping
       - Other
+    triggers:
+      - catchall
   - note: Question type (@ flow.result )
 
   - ask: What is your question?

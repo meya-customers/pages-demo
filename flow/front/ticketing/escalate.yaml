@@ -4,11 +4,11 @@ triggers:
 steps:
   - say: One moment while I find someone to help...
 
-  - type: meya.front.component.conversation.update
-    integration: integration.front
-    assignee_email:
+  - type: meya.util.text.component.random_hex
+  - flow_set: thread_ref
   - type: meya.front.component.conversation.create
     subject: (@ flow.subject )
-    attachments_url: []
-    text: TODO
+    thread_ref: (@ flow.thread_ref )
+    attachments_url: [] # TODO Remove
+    text: x # TODO Remove
     integration: integration.front

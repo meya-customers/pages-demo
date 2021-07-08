@@ -2,5 +2,22 @@ triggers:
   - event_type: meya.front.event.agent.assign
 
 steps:
-  # TODO Show agent name using integration name settings
-  - status: Conversation assigned to agent
+  - if: >-
+      (@
+        flow.event.data.payload.target.data.email == vault.front.bot_teammate_email
+      )
+    then:
+      jump: complete
+    else: next
+  - user_load: (@ flow.event.data.user_id )
+  - status: Conversation assigned to (@ flow.result.name )
+  - end
+
+  - (complete)
+  - if: (@ vault.front.mode == "ticketing" )
+    then:
+      flow: flow.front.ticketing.complete
+      transfer: true
+    else:
+      flow: flow.front.tracking.complete
+      transfer: true
