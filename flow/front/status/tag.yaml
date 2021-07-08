@@ -1,0 +1,5 @@
+triggers:
+  - event_type: meya.front.event.tag.add
+
+steps:
+  - status: Tag (@ flow.event.data.payload.name ) added

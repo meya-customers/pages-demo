@@ -1,0 +1,6 @@
+triggers:
+  - event_type: meya.front.event.agent.assign
+
+steps:
+  # TODO Show agent name using integration name settings
+  - status: Conversation assigned to agent

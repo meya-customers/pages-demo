@@ -9,7 +9,7 @@ steps:
         data: (@ flow )
         transfer: true
       ^balance$:
-        flow: flow.balance
+        flow: flow.app.balance
         data: (@ flow )
         transfer: true
       ^connect_new_device$:
@@ -25,7 +25,7 @@ steps:
         data: (@ flow )
         transfer: true
       ^order$:
-        flow: flow.order
+        flow: flow.app.order
         data: (@ flow )
         transfer: true
       ^returns$:
@@ -33,7 +33,7 @@ steps:
         data: (@ flow )
         transfer: true
       ^rewards:
-        flow: flow.rewards
+        flow: flow.app.rewards
         data: (@ flow )
         transfer: true
       ^shipping$:

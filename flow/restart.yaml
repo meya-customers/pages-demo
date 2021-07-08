@@ -7,7 +7,7 @@ steps:
     quick_replies:
       - text: Check my points balance
         action:
-          flow: flow.balance
+          flow: flow.app.balance
           transfer: true
       - text: How do points and rewards work?
         action:
@@ -15,11 +15,11 @@ steps:
           transfer: true
       - text: Browse available rewards
         action:
-          flow: flow.rewards
+          flow: flow.app.rewards
           transfer: true
       - text: Check an order
         action:
-          flow: flow.order
+          flow: flow.app.order
           transfer: true
       - text: Shipping
         action:
