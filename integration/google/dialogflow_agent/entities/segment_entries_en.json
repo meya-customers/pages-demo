@@ -1,0 +1,19 @@
+[
+  {
+    "value": "internal",
+    "synonyms": [
+      "internal",
+      "Internal"
+    ]
+  },
+  {
+    "value": "external",
+    "synonyms": [
+      "external",
+      "3p",
+      "3P",
+      "External",
+      "third party"
+    ]
+  }
+]

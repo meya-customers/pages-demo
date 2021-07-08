@@ -1,0 +1,80 @@
+[
+  {
+    "id": "b9da0dfe-502b-4427-8374-d970cc926caa",
+    "data": [
+      {
+        "text": "how do i setup a new connection",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "0a2da9d5-7b95-48ef-bb0d-7be8f53ce307",
+    "data": [
+      {
+        "text": "i need to connect my new device",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2fdea12d-2e22-45f4-bebd-e98121c1a586",
+    "data": [
+      {
+        "text": "new device connection",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "8fba7491-728e-4240-8ede-0d45c4fd493a",
+    "data": [
+      {
+        "text": "connect",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "e2e52f5c-49a2-4c0b-9e79-ce73b10a041c",
+    "data": [
+      {
+        "text": "connect new device",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "aaccc405-2199-4671-9d66-1903cf6f329f",
+    "data": [
+      {
+        "text": "how to connect new device",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

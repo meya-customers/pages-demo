@@ -1,0 +1,41 @@
+[
+  {
+    "id": "f610ae59-1b6f-4862-96cf-6036afe51d45",
+    "data": [
+      {
+        "text": "help",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "797c11f6-ce37-4a05-931c-fe7b6f5e2fa2",
+    "data": [
+      {
+        "text": "talk to support",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ddf6b6f3-14a9-4ae8-8e27-2aa65b677db2",
+    "data": [
+      {
+        "text": "talk to a human",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]
