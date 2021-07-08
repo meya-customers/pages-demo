@@ -1,5 +1,0 @@
-triggers:
-  - event_type: meya.front.event.trash
-
-steps:
-  - status: Conversation deleted

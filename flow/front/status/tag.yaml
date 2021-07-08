@@ -2,4 +2,11 @@ triggers:
   - event_type: meya.front.event.tag.add
 
 steps:
-  - status: Tag (@ flow.event.data.payload.name ) added
+  - value: (@ flow.event.data.payload.name )
+    case:
+      HIGH PRIORITY:
+        jump: high_priority
+    default: end
+
+  - (high_priority)
+  - status: Your issue is being handled with high priority

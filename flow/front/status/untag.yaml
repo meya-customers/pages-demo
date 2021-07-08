@@ -1,5 +1,0 @@
-triggers:
-  - event_type: meya.front.event.tag.remove
-
-steps:
-  - status: Tag (@ flow.event.data.payload.name ) removed
