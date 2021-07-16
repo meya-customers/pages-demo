@@ -1,8 +1,6 @@
 dialogflow.service_account_key: xxx
-front.enabled: false
 front.api_token: xxx
 front.channel_id: xxx
 front.bot_teammate_email: xxx
 front.client_token: xxx
-front.team_id: xxx
 front.mode: xxx
