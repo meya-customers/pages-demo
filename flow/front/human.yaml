@@ -21,6 +21,8 @@ steps:
     else:
       ask: What is your question?
 
+  - flow: flow.front.teammates.check_available
+
   - if: (@ vault.front.mode == "ticketing" )
     then:
       flow: flow.front.ticketing.escalate

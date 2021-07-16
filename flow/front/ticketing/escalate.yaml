@@ -1,8 +1,4 @@
-triggers:
-  - keyword: ticketing_create
-
 steps:
-  - say: One moment while I find someone to help...
 
   - type: meya.front.component.conversation.create
     subject: (@ flow.subject )

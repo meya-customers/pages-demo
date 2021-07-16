@@ -13,8 +13,8 @@ steps:
   - type: thread_unlink
     integration: integration.front
 
-  # Wait for the thread to finish unlinking before archiving it
-  - delay: 0.1
+  # Wait for the thread to finish unlinking and the last events to get processed before archiving it
+  - delay: 1
   - type: meya.front.component.conversation.update
     integration: integration.front
     conversation_id: (@ flow.conversation_id )

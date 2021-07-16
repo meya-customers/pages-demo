@@ -1,0 +1,17 @@
+triggers:
+  - keyword: check_available
+
+steps:
+  - type: meya.front.component.teammates.list
+    integration: integration.front
+  - type: component.front.teammates.check_available
+    teammates: (@ flow.result )
+    integration: integration.front
+
+  - if: (@ not flow.result )
+    then:
+      say: >-
+        Please note: none of our agents are currently available, but we'll try to
+        get back to you as soon as we can...
+    else:
+      say: One moment while I find someone to help...
