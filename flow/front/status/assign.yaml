@@ -10,8 +10,10 @@ steps:
     then:
       jump: complete
     else: next
-  - user_load: (@ flow.event.data.user_id )
-  - status: Conversation assigned to (@ flow.result.name )
+  - user_try_lookup: (@ flow.event.data.payload.target.data.id )
+    integration: integration.front
+  - user_load: (@ flow.result )
+  - status: Conversation assigned to (@ flow.result.name or "an agent" )
   - end
 
   - (complete)

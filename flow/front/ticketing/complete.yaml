@@ -13,11 +13,11 @@ steps:
   - type: thread_unlink
     integration: integration.front
 
-  # Wait for the thread to finish unlinking before deleting it
+  # Wait for the thread to finish unlinking before archiving it
   - delay: 0.1
   - type: meya.front.component.conversation.update
     integration: integration.front
     conversation_id: (@ flow.conversation_id )
-    status: deleted
+    status: archived
   - flow: flow.restart
     transfer: true

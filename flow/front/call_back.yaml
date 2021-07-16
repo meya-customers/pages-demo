@@ -1,5 +1,5 @@
 triggers:
-  - agent_command: ^call_back$
+  - agent_command: ^/call_back$
 
 steps:
   # Publish as the agent
