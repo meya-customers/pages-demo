@@ -1,0 +1,24 @@
+steps:
+  - say: What type of points question do you have?
+  - select: Points question type
+    options:
+      - text: Missing points from purchase
+        value: missing
+      - text: Points disappeared
+        value: disappeared
+      - text: Other
+        value: other
+  - jump: (@ flow.result )
+
+  - (missing)
+  - ask: Please upload a photo of your receipt
+    expect: image
+  - end
+
+  - (disappeared)
+  - ask: OK let's figure it out, tell me what happened
+  - end
+
+  - (other)
+  - ask_form: What other question do you have?
+  - end

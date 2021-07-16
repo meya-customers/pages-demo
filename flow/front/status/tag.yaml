@@ -1,5 +1,6 @@
 triggers:
   - event_type: meya.front.event.tag.add
+    bot: bot.status
 
 steps:
   - value: (@ flow.event.data.payload.name )

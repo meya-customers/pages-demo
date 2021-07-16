@@ -1,5 +1,6 @@
 triggers:
   - event_type: meya.front.event.agent.assign
+    bot: bot.status
 
 steps:
   - if: >-
@@ -17,7 +18,9 @@ steps:
   - if: (@ vault.front.mode == "ticketing" )
     then:
       flow: flow.front.ticketing.complete
-      transfer: true
+      async: true
+      bot: bot.default
     else:
       flow: flow.front.tracking.complete
-      transfer: true
+      async: true
+      bot: bot.default

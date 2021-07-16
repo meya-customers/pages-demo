@@ -1,9 +1,0 @@
-triggers:
-  - agent_command: unlink
-
-steps:
-  # TODO Switch to bot assign event
-  - type: thread_unlink
-    integration: integration.front
-  - thread_set:
-      mode:
