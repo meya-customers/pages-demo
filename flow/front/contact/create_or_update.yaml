@@ -2,7 +2,7 @@ triggers:
   - keyword: create_contact
 
 steps:
-  - type: component.login
+  - type: component.app.login
     integration: integration.orb
   - if: (@ not flow.result )
     then: end
