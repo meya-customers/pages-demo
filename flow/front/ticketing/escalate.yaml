@@ -1,5 +1,4 @@
 steps:
-
   - type: meya.front.component.conversation.create
     subject: (@ flow.subject )
     integration: integration.front
