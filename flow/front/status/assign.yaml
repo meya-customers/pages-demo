@@ -17,6 +17,12 @@ steps:
   - end
 
   - (complete)
+  - thread_set:
+      bot_assigned_count: (@ (thread.bot_assigned_count or 0) + 1 )
+  - if: >-
+      (@ vault.front.mode == "ticketing" or thread.bot_assigned_count == 1 )
+    then: end
+    else: next
   - if: (@ vault.front.mode == "ticketing" )
     then:
       flow: flow.front.ticketing.complete

@@ -20,6 +20,7 @@ steps:
       flow: flow.front.points_question
     else:
       ask: What is your question?
+  - flow_set: subject
 
   - flow: flow.front.teammates.check_available
 
@@ -27,10 +28,10 @@ steps:
     then:
       flow: flow.front.ticketing.escalate
       data:
-        subject: (@ flow.result )
+        subject: (@ flow.subject )
       transfer: true
     else:
       flow: flow.front.tracking.escalate
       data:
-        subject: (@ flow.result )
+        subject: (@ flow.subject )
       transfer: true

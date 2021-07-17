@@ -4,5 +4,11 @@ steps:
     title: Satisfaction
   - note: Rating (@ flow.result )
   - say: Thank you!
+
+  - thread_set:
+      bot_assigned_count: 0
+  - type: meya.front.component.conversation.update
+    integration: integration.front
+    inbox_id: (@ vault.front.tracking_complete_inbox_id )
   - flow: flow.restart
     transfer: true

@@ -1,5 +1,9 @@
 steps:
   - note: New subject - (@ flow.subject )
+
+  # Wait for the previous events to get processed before unassigning it
+  - delay: 2
   - type: meya.front.component.conversation.update
     integration: integration.front
     assignee_email:
+    inbox_id: (@ vault.front.tracking_escalate_inbox_id )
