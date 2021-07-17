@@ -2,9 +2,9 @@ triggers:
   - keyword: create_contact
 
 steps:
-  - type: meya.user.component.try_reverse_lookup
+  - type: component.login
     integration: integration.orb
-  - if: (@ flow.result )
+  - if: (@ not flow.result )
     then: end
     else: next
 

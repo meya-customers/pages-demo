@@ -6,8 +6,7 @@ triggers:
 steps:
   - thread_set:
       open_page: true
-  - type: component.login
-    integration: integration.orb
+  - flow: flow.front.contact.create_or_update
   - say: Hi, (@ user.name )! Welcome to Loyalty Rewards Help.
   - flow: flow.restart
     data:

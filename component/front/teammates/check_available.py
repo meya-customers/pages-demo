@@ -11,12 +11,12 @@ from typing import List
 
 @dataclass
 class CheckAvailableComponent(Component):
+    teammates: FrontTeammateList = element_field()
+    integration: FrontIntegrationRef = element_field()
+
     @dataclass
     class Response:
         result: bool = response_field()
-
-    teammates: FrontTeammateList = element_field()
-    integration: FrontIntegrationRef = element_field()
 
     async def start(self) -> List[Entry]:
         integration: FrontIntegration = await self.resolve(self.integration)

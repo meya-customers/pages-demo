@@ -1,9 +1,11 @@
 from dataclasses import dataclass
 from meya.component.element import Component
 from meya.element.field import element_field
+from meya.element.field import response_field
 from meya.entry import Entry
 from meya.orb.integration import OrbIntegrationRef
 from typing import List
+from typing import Optional
 
 
 @dataclass
@@ -15,11 +17,17 @@ class AppUser:
 class LoginComponent(Component):
     integration: OrbIntegrationRef = element_field()
 
+    @dataclass
+    class Response:
+        result: Optional[str] = response_field()
+
     async def start(self) -> List[Entry]:
         # Get the app user ID set via orb
-        app_user_id = await self.user.reverse_lookup(
+        app_user_id = await self.user.try_reverse_lookup(
             integration_id=self.integration.ref
         )
+        if not app_user_id:
+            return self.respond(data=self.Response(result=None))
 
         # TODO Replace with HTTP call to app server
         app_user_db = {
@@ -31,4 +39,4 @@ class LoginComponent(Component):
 
         # Update user scope with key fields
         self.user.name = app_user.name
-        return self.respond()
+        return self.respond(data=self.Response(result=app_user_id))
