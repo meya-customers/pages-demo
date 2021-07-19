@@ -5,7 +5,6 @@
 </head>
 <body>
 <script type="text/javascript">
-    localStorage.clear();
     window.orbConfig = {
         connectionOptions: {
             gridUrl: "https://grid.meya.ai",
@@ -15,7 +14,8 @@
             onFirstConnect: function (connectionData, next) {
                 next()
                 orb.openChat()
-            }
+            },
+            useLocalStorage: false
         },
         theme: {"brandColor": "#a655e4"},
         windowApi: true,
