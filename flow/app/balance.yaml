@@ -1,0 +1,12 @@
+triggers:
+  - keyword: balance
+
+steps:
+  - say: Please wait while I check your balance.
+  - delay: 3
+  - say: Your balance is...
+  - tiles:
+      - title: Loyalty Rewards
+        description: 5,000 points
+  - flow: flow.restart
+    transfer: true

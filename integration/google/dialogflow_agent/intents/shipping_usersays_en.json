@@ -1,0 +1,115 @@
+[
+  {
+    "id": "9e4503a5-464e-4e24-a4d2-06bf59ac6178",
+    "data": [
+      {
+        "text": "ship to ",
+        "userDefined": false
+      },
+      {
+        "text": "UK",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f8b57de2-48a7-453e-9ef4-fdc62a91c9cc",
+    "data": [
+      {
+        "text": "do you ship to ",
+        "userDefined": false
+      },
+      {
+        "text": "Argentina",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "6d5f5da0-3cb2-4c5a-874f-61e71fafa326",
+    "data": [
+      {
+        "text": "do you ship to ",
+        "userDefined": false
+      },
+      {
+        "text": "Canada",
+        "meta": "@sys.geo-country",
+        "alias": "geo-country",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2951c4d1-d6d2-47de-b7c8-3afadde66c9a",
+    "data": [
+      {
+        "text": "shipment",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "e7c8c273-97df-4be3-9974-72cf64c3feeb",
+    "data": [
+      {
+        "text": "ship",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "224e0a89-f628-450a-9571-e8f50c72d4f1",
+    "data": [
+      {
+        "text": "shipping info",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f9ef130c-bc48-450a-af39-b5f530ee26a4",
+    "data": [
+      {
+        "text": "shipping",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

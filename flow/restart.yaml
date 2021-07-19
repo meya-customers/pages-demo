@@ -1,0 +1,35 @@
+triggers:
+  - keyword: restart
+
+steps:
+  - delay: 1
+  - say: (@ flow.text | default("What else would you like to do today?") )
+    quick_replies:
+      - text: Check my points balance
+        action:
+          flow: flow.app.balance
+          transfer: true
+      - text: How do points and rewards work?
+        action:
+          flow: flow.faq.intro
+          transfer: true
+      - text: Browse available rewards
+        action:
+          flow: flow.app.rewards
+          transfer: true
+      - text: Check an order
+        action:
+          flow: flow.app.order
+          transfer: true
+      - text: Shipping
+        action:
+          flow: flow.faq.shipping
+          transfer: true
+      - text: Returns
+        action:
+          flow: flow.faq.returns
+          transfer: true
+      - text: Talk to support
+        action:
+          flow: flow.front.human
+          transfer: true

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "7d711b38-2c63-4895-b11b-8220149404ca",
+    "data": [
+      {
+        "text": "tell me about how it works",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "dcd03d86-6828-43d0-afc4-5c93f1cca85d",
+    "data": [
+      {
+        "text": "about",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "86a8abf5-0478-43cd-9ca6-03a173ac9cc1",
+    "data": [
+      {
+        "text": "what is the reward system?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "7f2552c6-cf2b-4352-a144-66c5e34bb178",
+    "data": [
+      {
+        "text": "How do rewards work?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "73064657-8899-4cc5-9a2e-8c3799c726aa",
+    "data": [
+      {
+        "text": "what are points?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

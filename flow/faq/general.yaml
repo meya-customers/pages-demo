@@ -1,6 +1,0 @@
-steps:
-  - say: Our business hours are 9am to 5pm Eastern.
-    quick_replies:
-      - text: Back
-        action:
-          flow: flow.start

@@ -6,23 +6,8 @@ triggers:
 steps:
   - thread_set:
       open_page: true
-  - say: Hey, welcome! What can I help you with?
-    quick_replies:
-      - text: General questions
-        action:
-          flow: flow.faq.general
-      - text: Product questions
-        action:
-          flow: flow.faq.product
-      - text: Orders & order status
-        action:
-          flow: flow.faq.orders
-      - text: Shipping & delivery
-        action:
-          flow: flow.nlu.shipping
-      - text: Returns
-        action:
-          flow: flow.faq.returns
-      - text: Talk to support
-        action:
-          flow: flow.front.human
+  - flow: flow.front.contact.create_or_update
+  - say: Hi, (@ user.name )! Welcome to Loyalty Rewards Help.
+  - flow: flow.restart
+    data:
+      text: What can I do for you today?

@@ -1,6 +1,6 @@
 steps:
   - type: component.nlu.tokenize_text
-    text: (@ flow.text )
+    text: (@ flow.result )
   - flow_set:
       sentences: (@ flow.result )
       index: 0
@@ -19,9 +19,11 @@ steps:
     then: next
     else:
       jump: continue
-  - flow_set:
-      intents: (@ flow.intents + [dict(result=flow.result, dialogflow_result=flow.dialogflow_result)]
-        )
+  - flow: flow.nlu.routing
+    data:
+      result: (@ flow.result )
+      confidence: (@ flow.confidence )
+      dialogflow_result: (@ flow.dialogflow_result )
 
   - (continue)
   - flow_set:
@@ -29,5 +31,7 @@ steps:
   - jump: loop
 
   - (end)
-  - end:
-      intents: (@ flow.intents )
+  - flow: flow.restart
+    data:
+      text: Sorry, I don't understand. Is there something else I can help you with?
+    transfer: true

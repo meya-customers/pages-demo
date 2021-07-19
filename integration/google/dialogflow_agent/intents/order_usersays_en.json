@@ -1,0 +1,41 @@
+[
+  {
+    "id": "01144b46-f919-46f8-b426-faf1f5810a45",
+    "data": [
+      {
+        "text": "check order status",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "797cf79c-7140-40d5-a040-4c095325a1c3",
+    "data": [
+      {
+        "text": "show my order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "4234ecd9-ac07-4eb7-ba3d-27e52a84be4f",
+    "data": [
+      {
+        "text": "order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

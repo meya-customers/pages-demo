@@ -1,40 +1,37 @@
 triggers:
-  - regex: escalate
+  - keyword: human
 
 steps:
-  - if: (@ user.name )
-    then:
-      jump: escalate
-    else: next
-  - ask: What's your name?
-  - user_set: name
-  - say: Nice to meet, you (@ user.name )! 👋
+  - thread_set:
+      mode: prechat
 
-  - (escalate)
-  # We can route to different flows depending on whether we're in tracking mode or ticketing mode. In this case,
-  # if we're in tracking mode, we'll assign the conversation to an agent. If we're in ticketing mode, we'll just
-  # create the conversation.
+  - flow: flow.front.contact.create_or_update
+
+  - ask: What type of question do you have?
+    quick_replies:
+      - Points
+      - Rewards
+      - Shipping
+      - Other
+  - note: Question type (@ flow.result )
+
+  - if: (@ flow.result == "Points" )
+    then:
+      flow: flow.front.points_question
+    else:
+      ask: What is your question?
+  - flow_set: subject
+
+  - flow: flow.front.teammates.check_available
+
   - if: (@ vault.front.mode == "ticketing" )
     then:
-      flow: flow.front.ticketing.create
+      flow: flow.front.ticketing.escalate
+      data:
+        subject: (@ flow.subject )
       transfer: true
-    else: next
-
-  - flow: flow.front.teams.shift.team_shift
-  - if: (@ flow.support_available )
-    then: next
     else:
-      jump: support_offline
-
-  - note: This note appears before agent escalation
-
-  - say: One moment while I find someone to help...
-  - type: meya.front.component.conversation.update
-    integration: integration.front
-    assignee_email: (@ vault.front.agent_email )
-
-  - note: This note appears after agent escalation
-  - end
-
-  - (support_offline)
-  - say: None of our agents are available at the moment. Please try again later.
+      flow: flow.front.tracking.escalate
+      data:
+        subject: (@ flow.subject )
+      transfer: true

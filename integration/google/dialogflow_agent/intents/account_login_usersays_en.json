@@ -1,0 +1,132 @@
+[
+  {
+    "id": "bddf483c-1549-4123-a942-4571cfd4cad2",
+    "data": [
+      {
+        "text": "can\u0027t access account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "619470f6-b3c0-45ba-a398-36c2b0613132",
+    "data": [
+      {
+        "text": "log in is broken",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f8d5a4ba-17fd-4359-aa16-52aca816fc61",
+    "data": [
+      {
+        "text": "need help with my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ab039a13-a144-4c7b-b548-983ab4eaa025",
+    "data": [
+      {
+        "text": "need help logging into my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "90d5f6dc-5530-492c-9fa5-802a2e0760ca",
+    "data": [
+      {
+        "text": "can you help me log in to my account?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "bd89da30-05fd-4e87-a266-29236e445b7b",
+    "data": [
+      {
+        "text": "problem with account login",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "90ce80e8-c0d0-4dea-b0df-0efea36d1327",
+    "data": [
+      {
+        "text": "problem with logging in to my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "0d92a02a-68ec-4efb-927a-a4d0a5749f86",
+    "data": [
+      {
+        "text": "account login",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "48121739-6860-49e6-b7f4-16fcbe3c0a7e",
+    "data": [
+      {
+        "text": "can\u0027t login to my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9a783a65-a6c3-4482-b858-4879f73a410b",
+    "data": [
+      {
+        "text": "account login issue",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

@@ -1,0 +1,8 @@
+triggers:
+  - keyword: order
+
+steps:
+  - ask: Enter an order number.
+  - say: Order number (@ flow.result ) is on its way.
+  - flow: flow.restart
+    transfer: true

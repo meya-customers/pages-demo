@@ -1,0 +1,9 @@
+{
+  "id": "6115d0b3-0a1a-4d6d-85f4-8804c30a13f6",
+  "name": "segment",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": true
+}

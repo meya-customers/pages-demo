@@ -1,0 +1,34 @@
+triggers:
+  - keyword: rewards
+
+steps:
+  - say: Here are the currently available rewards...
+  - tiles:
+      # https://www.cookingclassy.com/instant-pot-slow-cooker-salsa-chicken-tacos/
+      - title: One month free tacos
+        description: 100,000 points
+        image:
+          url: https://www.cookingclassy.com/wp-content/uploads/2017/06/salsa-chicken-tacos-2-500x500.jpg
+        buttons:
+          - text: Order
+            icon: (@ config.icon.cart )
+            result: taco
+      # https://40aprons.com/bacon-ramen/
+      - title: One month free ramen
+        description: 75,000 points
+        image:
+          url: https://40aprons.com/wp-content/uploads/2016/01/bacon-ramen-6.jpg
+        buttons:
+          - text: Order
+            icon: (@ config.icon.cart )
+            result: ramen
+    quick_replies:
+      - text: Back
+        action:
+          flow: flow.restart
+          transfer: true
+
+  - say: Great! Your first (@ flow.result ) is on the way!
+  - flow: flow.restart
+    transfer: true
+

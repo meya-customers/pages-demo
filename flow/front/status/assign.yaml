@@ -1,0 +1,34 @@
+triggers:
+  - event_type: meya.front.event.agent.assign
+    bot: bot.status
+
+steps:
+  - if: >-
+      (@
+        flow.event.data.payload.target.data.email == vault.front.bot_teammate_email
+      )
+    then:
+      jump: complete
+    else: next
+  - user_try_lookup: (@ flow.event.data.payload.target.data.id )
+    integration: integration.front
+  - user_load: (@ flow.result )
+  - status: Conversation assigned to (@ flow.result.name or "an agent" )
+  - end
+
+  - (complete)
+  - thread_set:
+      bot_assigned_count: (@ (thread.bot_assigned_count or 0) + 1 )
+  - if: >-
+      (@ vault.front.mode == "tracking" and thread.bot_assigned_count == 1 )
+    then: end
+    else: next
+  - if: (@ vault.front.mode == "ticketing" )
+    then:
+      flow: flow.front.ticketing.complete
+      async: true
+      bot: bot.default
+    else:
+      flow: flow.front.tracking.complete
+      async: true
+      bot: bot.default

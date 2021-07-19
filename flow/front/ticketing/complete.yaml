@@ -1,0 +1,23 @@
+steps:
+  - say: Did you enjoy our service today?
+  - rating: faces
+    title: Satisfaction
+  - note: Rating (@ flow.result )
+  - say: Thank you!
+
+  # Wait for the last events to flow through before unlinking
+  - delay: 0.1
+  - type: thread_try_reverse_lookup
+    integration: integration.front
+  - flow_set: conversation_id
+  - type: thread_unlink
+    integration: integration.front
+
+  # Wait for the thread to finish unlinking and the last events to get processed before archiving it
+  - delay: 1
+  - type: meya.front.component.conversation.update
+    integration: integration.front
+    conversation_id: (@ flow.conversation_id )
+    status: archived
+  - flow: flow.restart
+    transfer: true
