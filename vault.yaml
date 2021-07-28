@@ -2,7 +2,7 @@ dialogflow.service_account_key: xxx
 front.api_token: xxx
 front.channel_id: xxx
 front.bot_teammate_email: xxx
-front.client_token: xxx
+front.client_token:
 front.mode: ticketing
 front.tracking_escalate_inbox_id:
 front.tracking_complete_inbox_id:
