@@ -1,0 +1,37 @@
+steps:
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.home
+      milestones:
+        - text: Intro
+          current: true
+        - Finances
+        - Options
+        - Review
+    scope: flow
+  - page:
+      - info: |
+          # About you
+
+          To get started, we'd like to know a bit about you:
+      - type: text_input
+        placeholder: Your name
+        required: true
+        default: (@ user.name )
+      - type: email_address_input
+        placeholder: Your email address
+        required: true
+        default: (@ user.email )
+      - checkbox: Are you a Canadian citizen?
+        default: (@ user.canadian )
+    submit:
+      text: Next
+  - user_set:
+      name: (@ flow.result[0] )
+      email: (@ flow.result[1] )
+      canadian: (@ flow.result[2] )
+  - flow: flow.onboarding.house
+    transfer: true

@@ -1,6 +1,0 @@
-steps:
-  - say: (@ flow.dialogflow_response.queryResult.fulfillmentText )
-  - flow: flow.restart
-    transfer: true
-    data:
-      text: What can I help you with?

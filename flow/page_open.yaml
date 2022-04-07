@@ -1,0 +1,10 @@
+triggers:
+  - type: page_open
+    when: (@ not thread.open_page )
+  - keyword: start
+
+steps:
+  - thread_set:
+      open_page: true
+  - flow: flow.home
+    transfer: true

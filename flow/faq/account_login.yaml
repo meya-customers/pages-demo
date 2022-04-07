@@ -1,7 +1,0 @@
-triggers:
-  - keyword: account_login
-
-steps:
-  - say: To reset your password, click the "Reset Password" button on the log in page.
-  - flow: flow.restart
-    transfer: true

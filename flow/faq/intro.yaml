@@ -1,9 +1,0 @@
-triggers:
-  - keyword: intro
-
-steps:
-  - say: Every $10 you spend earns 100 points.
-  - delay: 1
-  - say: Use your points to order cool rewards!
-  - flow: flow.restart
-    transfer: true

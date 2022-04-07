@@ -1,0 +1,24 @@
+triggers:
+  - button_id: _about
+
+steps:
+  - header:
+      title: About
+    page:
+      - info: |
+          # What is MortgageTown?
+
+          MortgageTown is a new licenced mortgage broker established in 2022, operating in all provinces and territories of Canada.
+
+          Our motto: "We're not happy until you're happy."
+
+          We have multiple favourable customer testimonials and glowing press reviews.
+      - image: https://upload.wikimedia.org/wikipedia/commons/7/7c/Berrichon_-_Jean-Arthur_Rimbaud%2C_1912%2Cp5.png
+        alt: House illustration
+      - buttons:
+          - icon: (@ config.icon.house )
+            text: Return home
+            action:
+              flow: flow.home
+              transfer: true
+    submit:

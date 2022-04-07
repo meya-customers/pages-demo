@@ -1,19 +1,8 @@
-[![Meya build](https://github.com/meya-customers/front-demo/actions/workflows/meya.check-test.yaml/badge.svg)](https://github.com/meya-customers/front-demo/actions/workflows/meya.check-test.yaml)
+[![Meya build](https://github.com/meya-customers/pages-demo/actions/workflows/meya.check-test.yaml/badge.svg)](https://github.com/meya-customers/pages-demo/actions/workflows/meya.check-test.yaml)
 
-# Front demo
+# Pages demo
 
 Basic template BFML and Python code that runs on Meya.
-
-# Video walkthrough
-In this demo, you'll learn how to:
-
-* extract multiple intents from an email
-* handle email and chat with separate flows
-* transfer control to and from a Front agent
-
-Video walkthrough:
-
-https://www.loom.com/share/6fa59e5082ce426ca403e6e421d85f6751c72
 
 ## Setup
 
@@ -50,6 +39,4 @@ meya push --force --build-image
 ```
 
 ## Setup guides
-* [Front](https://docs.meya.ai/docs/how-to-setup-a-front-integration)
 * [Orb](https://docs.meya.ai/docs/how-to-set-up-an-orb-integration)
-* [Dialogflow](https://docs.meya.ai/docs/how-to-set-up-a-dialogflow-integration)

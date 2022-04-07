@@ -1,3 +1,22 @@
 icon:
-  phone: streamline-regular/20-phones-mobile-devices/01-phone/phone.svg
-  cart: streamline-bold/09-shopping-ecommerce/01-shops/shop-cart.svg
+  menu: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
+  left: streamline-regular/52-arrows-diagrams/01-arrows/arrow-left-1.svg
+  right: streamline-regular/52-arrows-diagrams/01-arrows/arrow-right-1.svg
+  house: streamline-regular/01-interface-essential/01-home/house-3.svg
+  question: streamline-regular/01-interface essential/14-alerts/question-circle.svg
+  message: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
+  info: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
+button:
+  menu:
+    icon: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
+    menu:
+      - icon: streamline-regular/01-interface-essential/01-home/house-3.svg
+        text: Home
+        button_id: _home
+      - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
+        text: FAQ
+      - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
+        text: Contact us
+      - icon: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
+        text: About us
+        button_id: _about

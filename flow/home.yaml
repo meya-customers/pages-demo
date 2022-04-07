@@ -1,0 +1,33 @@
+triggers:
+  - button_id: _home
+
+steps:
+  - header:
+      milestones:
+        - text: Intro
+          current: true
+        - Finances
+        - Options
+        - Review
+    page:
+      - info: |
+          ## 👋 Hi, welcome to MortgageTown!
+
+          We're here to help you on your journey toward owning and living in the home of your dreams.
+
+          Every home is ✨ unique, and so are each of our mortgages. We'll work with you to find the perfect match.
+
+          All of the mortgages offered by MortgageTown are...
+          - Affordable
+          - Flexible
+          - Personalized
+    submit:
+    extra_buttons:
+      - text: Sounds good, let's get started 👍
+        action:
+          flow: flow.onboarding.personal
+          transfer: true
+      - text: Tell me more about MortgageTown 🤔
+        action:
+          flow: flow.about
+          transfer: true

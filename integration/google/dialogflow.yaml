@@ -1,2 +1,0 @@
-type: meya.google.dialogflow.integration
-service_account_key: (@ vault.dialogflow.service_account_key )

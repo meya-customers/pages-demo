@@ -1,0 +1,47 @@
+steps:
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.onboarding.personal
+      milestones:
+        - text: Intro
+          current: true
+        - Finances
+        - Options
+        - Review
+    page:
+      - info: |
+          # About your home
+
+          Next, what can you tell us about your home?
+      - label: Home type
+        choices:
+          - Highrise condo
+          - Townhouse
+          - Duplex
+          - Single detached
+      - label: Appraised value
+        type: text_input
+        required: false
+        default: (@ user.appraised_value )
+      - label: Approximate year built
+        type: text_input
+        required: true
+        default: (@ user.appraised_value )
+      - label: Luxury features
+        buttons:
+          - Garage
+          - Shed
+          - Sun room
+          - Theatre room
+          - Bowling alley
+          - Pergola
+          - Walk-in pantry
+    submit:
+      text: Next
+  - user_set:
+      name: (@ flow.result[0] )
+      email: (@ flow.result[1] )
+      canadian: (@ flow.result[2] )

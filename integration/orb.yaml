@@ -1,2 +1,5 @@
 type: meya.orb.integration
 identity_verification: false
+header:
+  buttons:
+    - (@ config.button.menu )
