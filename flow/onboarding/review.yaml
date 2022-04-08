@@ -1,0 +1,20 @@
+steps:
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.onboarding.options
+            transfer: true
+      milestones:
+        - Intro
+        - Finances
+        - Options
+        - text: Review
+          current: true
+    page:
+      - info: Review
+    submit:
+      text: Sign ✍️
+  - flow: flow.onboarding.done
+    transfer: true

@@ -1,0 +1,12 @@
+steps:
+  - header:
+      title: Mortgage complete
+    page:
+      - info: Yay!
+      - buttons:
+          - icon: (@ config.icon.house )
+            text: Return home
+            action:
+              flow: flow.home
+              transfer: true
+    submit:

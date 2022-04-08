@@ -1,0 +1,50 @@
+steps:
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.onboarding.house
+            transfer: true
+      milestones:
+        - Intro
+        - text: Finances
+          current: true
+        - Options
+        - Review
+    page:
+      - info: |
+          # Financial details
+
+          First off, what is total price of the home?
+      - type: text_input
+        default: (@ user.total_price )
+      - info: And how big is your downpayment?
+      - type: text_input
+        default: (@ user.downpayment )
+      - info: To put things in perspective, what is your annual household income?
+      - type: text_input
+        default: (@ user.income )
+      - info: Finally, what payment schedule would you prefer?
+      - choices:
+          - text: Weekly
+            value: 0
+            default: (@ user.schedule == 0 )
+          - text: Bi-weekly
+            value: 1
+            default: (@ user.schedule == 1 )
+          - text: Semi-monthly
+            value: 2
+            default: (@ user.schedule == 2 )
+          - text: Monthly
+            value: 3
+            default: (@ user.schedule == 3 )
+    submit:
+      text: Next
+  - user_set:
+      total_price: (@ flow.result[0] )
+      downpayment: (@ flow.result[1] )
+      income: (@ flow.result[2] )
+      schedule: (@ flow.result[3] )
+  - flow: flow.onboarding.options
+    transfer: true

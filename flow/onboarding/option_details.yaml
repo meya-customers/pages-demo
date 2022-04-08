@@ -1,0 +1,20 @@
+steps:
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            end:
+              option:
+      title: (@ flow.option.name )
+    page:
+      - info: (@ flow.option.description )
+    submit:
+      text: Sounds good, let's review
+    extra_buttons:
+      - text: View other options
+        action:
+          end:
+            option:
+  - end:
+      option: (@ flow.option )

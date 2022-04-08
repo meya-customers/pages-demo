@@ -1,0 +1,57 @@
+steps:
+  - header:
+      buttons:
+        - icon: (@ config.icon.menu )
+          disabled: true
+        - icon: (@ config.icon.left )
+          disabled: true
+      milestones:
+        - Intro
+        - Finances
+        - text: Options
+          current: true
+        - Review
+    page:
+      - info: |
+          # Determining your mortgage options
+
+          Please wait while we find the best mortgage options for you...
+    submit:
+
+  - type: component.onboarding.calculate_options
+  - type: component.onboarding.display_options
+    options: (@ flow.result )
+  - delay: 2
+
+  - (options)
+  - flow_set:
+      intro:
+        info: |
+          # Here are your mortgage options
+
+          Just for you, here are the 3 top options we'd recommend 👇
+  - header:
+      buttons:
+        - (@ config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.onboarding.finances
+            transfer: true
+      milestones:
+        - Intro
+        - Finances
+        - text: Options
+          current: true
+        - Review
+    page: (@ [flow.intro] + flow.result )
+    submit:
+
+  - if: (@ not flow.option )
+    then:
+      jump: options
+    else: next
+
+  - user_set:
+      option: (@ flow.option )
+  - flow: flow.onboarding.review
+    transfer: true

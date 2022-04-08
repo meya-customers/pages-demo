@@ -13,6 +13,7 @@ button:
       - icon: streamline-regular/01-interface-essential/01-home/house-3.svg
         text: Home
         button_id: _home
+      - ---
       - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
         text: FAQ
       - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg

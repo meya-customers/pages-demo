@@ -5,14 +5,14 @@ steps:
         - icon: (@ config.icon.left )
           action:
             flow: flow.home
+            transfer: true
       milestones:
         - text: Intro
           current: true
         - Finances
         - Options
         - Review
-    scope: flow
-  - page:
+    page:
       - info: |
           # About you
 
