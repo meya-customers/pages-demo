@@ -2,7 +2,10 @@ steps:
   - header:
       title: Mortgage complete
     page:
-      - info: Yay!
+      - info: |
+          # 🙌 Awesome!
+
+          Welcome to MortgageTown, (@ user.name). We hope this is the start of a long and prosperous partnership.
       - buttons:
           - icon: (@ config.icon.house )
             text: Return home

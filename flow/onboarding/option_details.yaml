@@ -6,13 +6,25 @@ steps:
           action:
             end:
               option:
-      title: (@ flow.option.name )
+      title: (@ flow.option.name ) mortgage
     page:
-      - info: (@ flow.option.description )
+      - info: |
+          (@ flow.option.description )
+
+          **Interest rate:** (@ "%.2f"|format(flow.option.rate) )%
+
+          **Payment:** $(@ "%.2f"|format(flow.option.payment) )
+
+          This payment will use (@ "%.2f"|format(flow.option.income_fraction * 100) )% of your income. OK?
+
+          (% if flow.option.variable %)
+          This payment will increase immediately after any Bank of Canada increases to overnight lending rates. OK?
+          (% endif %)
     submit:
-      text: Sounds good, let's review
+      text: Sounds good, let's review 👍
     extra_buttons:
-      - text: View other options
+      - icon: (@ config.icon.left )
+        text: View other options
         action:
           end:
             option:

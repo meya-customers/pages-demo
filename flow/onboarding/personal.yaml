@@ -26,6 +26,7 @@ steps:
         required: true
         default: (@ user.email )
       - checkbox: Are you a Canadian citizen?
+        required: false
         default: (@ user.canadian )
     submit:
       text: Next

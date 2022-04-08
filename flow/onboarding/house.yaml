@@ -28,11 +28,12 @@ steps:
           - text: Single detached
             default: (@ user.home_type == "Single detached" )
       - label: Appraised value
-        type: text_input
+        regex_input: \d*
         required: false
         default: (@ user.home_value )
       - label: Approximate year built
-        type: text_input
+        regex_input: \d{4}
+        error_message: Invalid year, please try again.
         required: true
         default: (@ user.home_year )
       - label: Luxury features
@@ -52,6 +53,7 @@ steps:
           - text: Walk-in pantry
             default: (@ "Walk-in pantry" in (user.home_features or []) )
         multi: true
+        required: false
     submit:
       text: Next
   - user_set:

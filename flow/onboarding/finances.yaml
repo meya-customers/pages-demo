@@ -17,13 +17,16 @@ steps:
           # Financial details
 
           First off, what is total price of the home?
-      - type: text_input
+      - regex_input: \d+
+        required: true
         default: (@ user.total_price )
       - info: And how big is your downpayment?
-      - type: text_input
+      - regex_input: \d+
+        required: true
         default: (@ user.downpayment )
       - info: To put things in perspective, what is your annual household income?
-      - type: text_input
+      - regex_input: \d+
+        required: true
         default: (@ user.income )
       - info: Finally, what payment schedule would you prefer?
       - choices:
@@ -38,7 +41,8 @@ steps:
             default: (@ user.schedule == 2 )
           - text: Monthly
             value: 3
-            default: (@ user.schedule == 3 )
+            default: (@ user.schedule == 3 or user.schedule == null )
+        required: true
     submit:
       text: Next
   - user_set:

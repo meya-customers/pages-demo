@@ -16,9 +16,14 @@ steps:
           # Determining your mortgage options
 
           Please wait while we find the best mortgage options for you...
+      - image: https://media.giphy.com/media/l2SpZkQ0XT1XtKus0/giphy.gif
+        alt: Searching
     submit:
 
   - type: component.onboarding.calculate_options
+    total_price: (@ user.total_price )
+    downpayment: (@ user.downpayment )
+    income: (@ user.income )
   - type: component.onboarding.display_options
     options: (@ flow.result )
   - delay: 2
