@@ -1,4 +1,4 @@
-type: meya.orb.integration
+type: meya.orb.mobile.integration
 identity_verification: false
 theme:
   brand_color: (@ config.color.brand )

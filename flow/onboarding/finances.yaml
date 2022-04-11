@@ -41,7 +41,7 @@ steps:
             default: (@ user.schedule == 2 )
           - text: Monthly
             value: 3
-            default: (@ user.schedule == 3 or user.schedule == null )
+            default: (@ user.schedule == 3 or user.schedule is none )
         required: true
     submit:
       text: Next

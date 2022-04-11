@@ -27,7 +27,7 @@ steps:
           | (@ user.option.name) | (@ "%.2f"|format(user.option.rate) )% | $(@ "%.2f"|format(user.option.payment) ) |
       - checkbox: I agree to all terms and conditions
         required: true
-      - checkbox: I am ready to start my new mortgage
+      - checkbox: Start auto-withdrawal today
         required: true
     submit:
       text: Sign ✍️
