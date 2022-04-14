@@ -2,6 +2,13 @@ triggers:
   - button_id: _home
 
 steps:
+  - if: (@ user.logged_in )
+    then:
+      jump: app
+    else:
+      jump: onboarding
+
+  - (onboarding)
   - header:
       milestones:
         - text: Intro
@@ -30,4 +37,23 @@ steps:
       - text: Tell me more about MortgageTown 🤔
         action:
           flow: flow.about
+          transfer: true
+
+  - (app)
+  - header:
+      title: Home
+    page:
+      - info: |
+          ## 👋 Hi, (@ user.name )
+
+          What would you like to do today?
+    submit:
+    extra_buttons:
+      - text: View balance
+        action:
+          flow: flow.app.balance
+          transfer: true
+      - text: Refer a friend
+        action:
+          flow: flow.app.refer
           transfer: true

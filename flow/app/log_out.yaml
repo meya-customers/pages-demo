@@ -1,0 +1,31 @@
+triggers:
+  - button_id: _log_out
+
+steps:
+  - user_set:
+      name:
+      email:
+      canadian:
+      home_type:
+      home_value:
+      home_year:
+      home_features:
+      total_price:
+      downpayment:
+      income:
+      schedule:
+      option:
+      payment_day:
+      logged_in:
+  - orb_header:
+  - header:
+      title: Log out
+    page:
+      - info: Thanks for trying MortgageTown, your are now logged out.
+      - buttons:
+          - icon: (@ config.icon.house )
+            text: Return home
+            action:
+              flow: flow.home
+              transfer: true
+    submit:

@@ -8,6 +8,8 @@ icon:
   question: streamline-regular/01-interface essential/14-alerts/question-circle.svg
   message: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
   info: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
+  exit: streamline-regular/01-interface-essential/04-login-logout/exit.svg
+  invoice: streamline-regular/08-money-payments-finance/01-accounting-billing/accounting-invoice.svg
 button:
   menu:
     icon: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
