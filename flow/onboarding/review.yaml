@@ -32,27 +32,9 @@ steps:
     submit:
       text: Sign ✍️
 
-  - component.app.login
-  - orb_header:
-      menu:
-        icon: (@ config.icon.menu )
-        menu:
-          - icon: (@ config.icon.house )
-            text: Home
-            button_id: _home
-          - icon: (@ config.icon.invoice )
-            text: Balance
-            button_id: _balance
-          - icon: (@ config.icon.exit )
-            text: Log out
-            button_id: _log_out
-          - '---'
-          - icon: (@ config.icon.question )
-            text: FAQ
-          - icon: (@ config.icon.message )
-            text: Contact us
-          - icon: (@ config.icon.info )
-            text: About us
-            button_id: _about
+  - type: component.app.login
+    integrations:
+      - integration.orb_web
+      - integration.orb_mobile
   - flow: flow.onboarding.done
     transfer: true

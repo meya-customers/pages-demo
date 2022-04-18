@@ -8,8 +8,9 @@ icon:
   question: streamline-regular/01-interface essential/14-alerts/question-circle.svg
   message: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
   info: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
-  exit: streamline-regular/01-interface-essential/04-login-logout/exit.svg
   invoice: streamline-regular/08-money-payments-finance/01-accounting-billing/accounting-invoice.svg
+  exit: streamline-regular/01-interface-essential/04-login-logout/exit.svg
+  heart_hands: streamline-regular/39-romance/01-love/love-heart-hands-hold.svg
 button:
   menu:
     icon: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
@@ -17,6 +18,29 @@ button:
       - icon: streamline-regular/01-interface-essential/01-home/house-3.svg
         text: Home
         button_id: _home
+      - ---
+      - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
+        text: FAQ
+      - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
+        text: Contact us
+      - icon: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
+        text: About us
+        button_id: _about
+  app_menu:
+    icon: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
+    menu:
+      - icon: streamline-regular/01-interface-essential/01-home/house-3.svg
+        text: Home
+        button_id: _home
+      - icon: streamline-regular/08-money-payments-finance/01-accounting-billing/accounting-invoice.svg
+        text: Balance
+        button_id: _balance
+      - icon: streamline-regular/39-romance/01-love/love-heart-hands-hold.svg
+        text: Refer a friend
+        button_id: _refer
+      - icon: streamline-regular/01-interface-essential/04-login-logout/exit.svg
+        text: Log out
+        button_id: _log_out
       - ---
       - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
         text: FAQ

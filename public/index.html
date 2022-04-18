@@ -9,13 +9,13 @@
         connectionOptions: {
             gridUrl: "https://grid.meya.ai",
             appId: "app-835c5d6355204c0ca732f683ab999198",
-            integrationId: "integration.orb",
+            integrationId: "integration.orb_web",
             userId: "u-0",
             onFirstConnect: function (connectionData, next) {
                 next()
                 orb.openChat()
             },
-            useLocalStorage: false
+            useLocalStorage: true
         },
         windowApi: true,
     };

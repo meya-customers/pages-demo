@@ -18,7 +18,7 @@ class AppUser:
 
 @dataclass
 class LoginComponent(Component):
-    integration: OrbIntegrationRef = element_field()
+    integrations: List[OrbIntegrationRef] = element_field()
 
     @dataclass
     class Response:
@@ -26,9 +26,15 @@ class LoginComponent(Component):
 
     async def start(self) -> List[Entry]:
         # Get the app user ID set via orb
-        app_user_id = await self.user.try_reverse_lookup(
-            integration_id=self.integration.ref
-        )
+        try:
+            app_user_id = await (
+                await self.user.try_reverse_lookup(
+                    integration_id=integration.ref
+                )
+                for integration in self.integrations
+            ).__anext__()
+        except StopAsyncIteration:
+            app_user_id = None
         if not app_user_id:
             return self.respond(data=self.Response(result=None))
 
@@ -42,6 +48,6 @@ class LoginComponent(Component):
 
         # Update user scope with key fields
         today = date.today()
-        self.user.next_payment = f"{today.replace(day=app_user.payment_day) + (timedelta(days=monthrange(today.year, today.month)) if today.day > app_user.payment_day else 0):%B %-d, %Y}"
+        self.user.next_payment = f"{today.replace(day=app_user.payment_day) + (timedelta(days=monthrange(today.year, today.month)[1]) if today.day > app_user.payment_day else 0):%B %-d, %Y}"
         self.user.logged_in = True
         return self.respond(data=self.Response(result=app_user_id))

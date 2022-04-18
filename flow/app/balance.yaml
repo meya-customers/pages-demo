@@ -1,27 +1,20 @@
 triggers:
-  - button_id: _log_out
+  - button_id: _balance
 
 steps:
-  - user_set:
-      name:
-      email:
-      canadian:
-      home_type:
-      home_value:
-      home_year:
-      home_features:
-      total_price:
-      downpayment:
-      income:
-      schedule:
-      option:
-      payment_day:
-      logged_in:
-  - orb_header:
   - header:
-      title: Log out
+      title: Balance
     page:
-      - info: Thanks for trying MortgageTown, your are now logged out.
+      - info: |
+          Your mortgage:
+
+          | Mortgage             | Interest rate                         |
+          | -------------------- | ------------------------------------- |
+          | (@ user.option.name) | (@ "%.2f"|format(user.option.rate) )% |
+
+          Your current balance is **$(@ "%.2f"|format((user.total_price | float) - (user.downpayment | float)) )**.
+
+          Your next payment of **$(@ "%.2f"|format(user.option.payment) )** will be automatically withdrawn on **(@ user.next_payment )**.
       - buttons:
           - icon: (@ config.icon.house )
             text: Return home

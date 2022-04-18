@@ -40,11 +40,16 @@ steps:
           transfer: true
 
   - (app)
+  - orb_header:
+      buttons:
+        - (@ config.button.app_menu )
   - header:
       title: Home
     page:
       - info: |
           ## 👋 Hi, (@ user.name )
+
+          You have no new messages.
 
           What would you like to do today?
     submit:
@@ -57,3 +62,5 @@ steps:
         action:
           flow: flow.app.refer
           transfer: true
+      - text: Renew mortgage
+        disabled: true
