@@ -13,9 +13,13 @@ from meya.orb.integration import OrbIntegrationRef
 
 @pytest.mark.asyncio
 async def test_login_component_ok():
-    integration = OrbIntegration(id="orb-1")
+    integration_1 = OrbIntegration(id="orb-1")
+    integration_2 = OrbIntegration(id="orb-2")
     component = LoginComponent(
-        integrations=[OrbIntegrationRef(integration.id)]
+        integrations=[
+            OrbIntegrationRef(integration_1.id),
+            OrbIntegrationRef(integration_2.id),
+        ]
     )
     component_start_entry = create_component_start_entry(component)
     integration_user_id = "u-0"
@@ -31,11 +35,12 @@ async def test_login_component_ok():
         user=user,
         expected_pub_entries=[flow_next_entry, *user_changes],
         expected_db_requests=[
+            create_user_reverse_lookup_db_request(integration_1, user),
             create_user_reverse_lookup_db_request(
-                integration, user, integration_user_id
-            )
+                integration_2, user, integration_user_id
+            ),
         ],
-        extra_elements=[integration],
+        extra_elements=[integration_1, integration_2],
     )
 
 

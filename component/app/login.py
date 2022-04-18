@@ -20,15 +20,14 @@ class LoginComponent(Component):
 
     async def start(self) -> List[Entry]:
         # Get the app user ID set via orb
-        try:
-            app_user_id = await (
-                await self.user.try_reverse_lookup(
-                    integration_id=integration.ref
-                )
-                for integration in self.integrations
-            ).__anext__()
-        except StopAsyncIteration:
-            app_user_id = None
+        app_user_id = None
+        async for result in (
+            await self.user.try_reverse_lookup(integration_id=integration.ref)
+            for integration in self.integrations
+        ):
+            if result:
+                app_user_id = result
+                break
         if not app_user_id:
             return self.respond()
 
@@ -38,7 +37,9 @@ class LoginComponent(Component):
             "u-1": AppUser(payment_day=8),
             "u-2": AppUser(payment_day=12),
         }
-        app_user = app_user_db[app_user_id]
+        app_user = app_user_db.get(app_user_id)
+        if not app_user:
+            return self.respond()
 
         # Update user scope with key fields
         today = date.today()
