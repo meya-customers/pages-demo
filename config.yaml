@@ -9,8 +9,9 @@ icon:
   message: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
   info: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
   invoice: streamline-regular/08-money-payments-finance/01-accounting-billing/accounting-invoice.svg
-  exit: streamline-regular/01-interface-essential/04-login-logout/exit.svg
+  logout: streamline-regular/01-interface-essential/04-login-logout/logout.svg
   heart_hands: streamline-regular/39-romance/01-love/love-heart-hands-hold.svg
+  refresh: streamline-regular/51-real-estate/12-update/real-estate-update-house-refresh.svg
 button:
   menu:
     icon: streamline-regular/01-interface-essential/03-menu/navigation-menu.svg
@@ -23,6 +24,7 @@ button:
         text: FAQ
       - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
         text: Contact us
+        button_id: _human
       - icon: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
         text: About us
         button_id: _about
@@ -38,7 +40,7 @@ button:
       - icon: streamline-regular/39-romance/01-love/love-heart-hands-hold.svg
         text: Refer a friend
         button_id: _refer
-      - icon: streamline-regular/01-interface-essential/04-login-logout/exit.svg
+      - icon: streamline-regular/01-interface-essential/04-login-logout/logout.svg
         text: Log out
         button_id: _log_out
       - ---
@@ -46,6 +48,7 @@ button:
         text: FAQ
       - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
         text: Contact us
+        button_id: _human
       - icon: streamline-regular/01-interface-essential/14-alerts/information-circle.svg
         text: About us
         button_id: _about

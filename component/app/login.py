@@ -4,11 +4,9 @@ from datetime import date
 from datetime import timedelta
 from meya.component.element import Component
 from meya.element.field import element_field
-from meya.element.field import response_field
 from meya.entry import Entry
 from meya.orb.integration import OrbIntegrationRef
 from typing import List
-from typing import Optional
 
 
 @dataclass
@@ -19,10 +17,6 @@ class AppUser:
 @dataclass
 class LoginComponent(Component):
     integrations: List[OrbIntegrationRef] = element_field()
-
-    @dataclass
-    class Response:
-        result: Optional[str] = response_field()
 
     async def start(self) -> List[Entry]:
         # Get the app user ID set via orb
@@ -36,7 +30,7 @@ class LoginComponent(Component):
         except StopAsyncIteration:
             app_user_id = None
         if not app_user_id:
-            return self.respond(data=self.Response(result=None))
+            return self.respond()
 
         # TODO Replace with HTTP call to app server
         app_user_db = {
@@ -48,6 +42,6 @@ class LoginComponent(Component):
 
         # Update user scope with key fields
         today = date.today()
+        self.user.app_user_id = app_user_id
         self.user.next_payment = f"{today.replace(day=app_user.payment_day) + (timedelta(days=monthrange(today.year, today.month)[1]) if today.day > app_user.payment_day else 0):%B %-d, %Y}"
-        self.user.logged_in = True
-        return self.respond(data=self.Response(result=app_user_id))
+        return self.respond()

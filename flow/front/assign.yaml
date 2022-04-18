@@ -1,0 +1,22 @@
+triggers:
+  - event_type: meya.front.event.agent.assign
+    bot: bot.status
+    action:
+      data:
+        payload: (@ flow.event.data.payload )
+
+steps:
+  - if: (@ flow.payload.target.data.email == vault.front.bot_teammate_email )
+    then:
+      jump: complete
+    else: next
+  - user_try_lookup: (@ flow.payload.target.data.id )
+    integration: integration.front
+  - user_load: (@ flow.result )
+  - status: Conversation assigned to (@ flow.result.name or "an agent" )
+  - end
+
+  - (complete)
+  - flow: flow.front.complete
+    async: true
+    bot: bot.default

@@ -2,13 +2,14 @@ triggers:
   - button_id: _home
 
 steps:
-  - if: (@ user.logged_in )
+  - if: (@ user.app_user_id )
     then:
       jump: app
     else:
       jump: onboarding
 
   - (onboarding)
+  - orb_header:
   - header:
       milestones:
         - text: Intro
@@ -54,13 +55,21 @@ steps:
           What would you like to do today?
     submit:
     extra_buttons:
-      - text: View balance
+      - icon: (@ config.icon.invoice )
+        text: View balance
         action:
           flow: flow.app.balance
           transfer: true
-      - text: Refer a friend
+      - icon: (@ config.icon.heart_hands )
+        text: Refer a friend
         action:
           flow: flow.app.refer
           transfer: true
-      - text: Renew mortgage
+      - icon: (@ config.icon.refresh )
+        text: Renew your mortgage
         disabled: true
+      - icon: (@ config.icon.message )
+        text: Contact us
+        action:
+          flow: flow.front.human
+          transfer: true

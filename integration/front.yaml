@@ -1,0 +1,12 @@
+type: meya.front.integration
+enabled: (@ vault.front.enabled )
+api_token: (@ vault.front.api_token )
+bot_teammate_email: (@ vault.front.bot_teammate_email )
+channel_id: (@ vault.front.channel_id )
+unassign_mode: bot
+integration_mode: ticketing
+agent:
+  name: first_last_initial
+  avatar:
+    image: https://meya-website.cdn.prismic.io/meya-website/add2c3f0-c3f8-4bd9-b04e-9ece561aa6d2_headphones-customer-support-question.svg
+client_token: (@ vault.front.client_token )

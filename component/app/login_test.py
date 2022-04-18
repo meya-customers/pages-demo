@@ -21,11 +21,10 @@ async def test_login_component_ok():
     integration_user_id = "u-0"
     user = create_user()
     user_changes = create_user_changes(
-        user, dict(logged_in=True, next_payment="July 10, 2019")
+        user,
+        dict(app_user_id=integration_user_id, next_payment="July 10, 2019"),
     )
-    flow_next_entry = create_flow_next_entry(
-        component_start_entry, data={"result": integration_user_id}
-    )
+    flow_next_entry = create_flow_next_entry(component_start_entry)
     await verify_process_element(
         element=component,
         sub_entry=component_start_entry,
@@ -48,9 +47,7 @@ async def test_login_component_fail():
     )
     component_start_entry = create_component_start_entry(component)
     user = create_user()
-    flow_next_entry = create_flow_next_entry(
-        component_start_entry, data={"result": None}
-    )
+    flow_next_entry = create_flow_next_entry(component_start_entry)
     await verify_process_element(
         element=component,
         sub_entry=component_start_entry,

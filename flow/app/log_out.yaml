@@ -15,8 +15,8 @@ steps:
       income:
       schedule:
       option:
+      app_user_id:
       payment_day:
-      logged_in:
   - orb_header:
   - header:
       title: Log out

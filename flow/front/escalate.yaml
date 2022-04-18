@@ -1,0 +1,22 @@
+steps:
+  - orb_header:
+      buttons: []
+  - status: Please wait for an agent to accept your request...
+    ephemeral: true
+
+  - if: (@ user.app_user_id )
+    then:
+      flow_set:
+        handle: app/(@ user.app_user_id )
+    else:
+      flow_set:
+        handle:
+  - type: meya.front.component.contact.create_or_update
+    integration: integration.front
+    name: (@ user.name )
+    handle: (@ flow.handle )
+
+  - type: meya.front.component.conversation.create
+    subject: (@ flow.subject )
+    text: (New issue)
+    integration: integration.front

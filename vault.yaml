@@ -1,2 +1,5 @@
-
-  null
+front.enabled: true
+front.api_token: xxx
+front.channel_id: xxx
+front.bot_teammate_email: xxx
+front.client_token: xxx

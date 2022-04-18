@@ -1,0 +1,57 @@
+triggers:
+  - button_id: _human
+
+steps:
+  - if: (@ user.app_user_id )
+    then:
+      jump: issue
+    else: next
+
+  - header:
+      title: Contact us
+    page:
+      - info: |
+          # Before we begin...
+
+          We need some details about you:
+      - type: text_input
+        placeholder: Your name
+        required: true
+        default: (@ user.name )
+      - type: email_address_input
+        placeholder: Your email address
+        required: true
+        default: (@ user.email )
+    submit:
+      text: Next
+  - user_set:
+      name: (@ flow.result[0] )
+      email: (@ flow.result[1] )
+
+  - (issue)
+  - thread_set:
+      mode: prechat
+  - header:
+      title: Contact us
+    page:
+      - info: |
+          # Issue details
+
+          What can we help you with?
+      - type: text_input
+        placeholder: Problem description
+        required: true
+      - info: What platforms have you experienced this problem on?
+      - choices:
+          - Web
+          - Android
+          - iOS
+          - In-person
+        multi: true
+        required: true
+    submit:
+      text: Submit request
+
+  - flow: flow.front.escalate
+    data:
+      subject: (@ flow.result[0] ) ((@ flow.result[1] | join(" / ") ))
