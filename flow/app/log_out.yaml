@@ -2,6 +2,7 @@ triggers:
   - button_id: _log_out
 
 steps:
+  - mode:
   - user_set:
       name:
       email:

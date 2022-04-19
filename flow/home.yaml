@@ -2,6 +2,7 @@ triggers:
   - button_id: _home
 
 steps:
+  - mode:
   - if: (@ user.app_user_id )
     then:
       jump: app

@@ -22,6 +22,7 @@ button:
       - ---
       - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
         text: FAQ
+        button_id: _help
       - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
         text: Contact us
         button_id: _human
@@ -46,6 +47,7 @@ button:
       - ---
       - icon: streamline-regular/01-interface essential/14-alerts/question-circle.svg
         text: FAQ
+        button_id: _help
       - icon: streamline-regular/21-messages-chat-smileys/02-messages-speech-bubbles/messages-bubble-square-typing.svg
         text: Contact us
         button_id: _human

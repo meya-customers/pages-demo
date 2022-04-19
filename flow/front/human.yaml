@@ -2,6 +2,7 @@ triggers:
   - button_id: _human
 
 steps:
+  - mode:
   - if: (@ user.app_user_id )
     then:
       jump: issue
@@ -29,8 +30,7 @@ steps:
       email: (@ flow.result[1] )
 
   - (issue)
-  - thread_set:
-      mode: prechat
+  - mode: prechat
   - header:
       title: Contact us
     page:

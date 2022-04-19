@@ -2,6 +2,7 @@ triggers:
   - button_id: _about
 
 steps:
+  - mode:
   - header:
       title: About
     page:

@@ -1,0 +1,55 @@
+steps:
+  - jump: (@ flow.question.id )
+
+  - (apr)
+  - flow_set:
+      answer: |
+        APR or annual percentage rate means the cost of borrowing for a loan under a credit agreement, expressed as an annual rate on the principal.
+  - jump: answer
+
+  - (bi_weekly)
+  - flow_set:
+      answer: |
+        Regular bi-weekly payments are calculated by multiplying your monthly mortgage payment by 12 and then dividing by 26.
+  - jump: answer
+
+  - (semi_monthly)
+  - flow_set:
+      answer: |
+        Semi monthly mortgage payments are structured for the borrower to make payments 2 times per month.
+  - jump: answer
+
+  - (forclosure)
+  - (salary_ratio)
+  - (rate_rise)
+  - (rate_determination)
+  - (handle_information)
+  - (send_information)
+  - flow_set:
+      answer: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - jump: answer
+
+  - (answer)
+  - header:
+      buttons:
+        - (@ config.button.app_menu if user.app_user_id else config.button.menu )
+        - icon: (@ config.icon.left )
+          action:
+            flow: flow.help.menu
+            transfer: true
+      title: (@ flow.question.text )
+    page:
+      - info: (@ flow.answer )
+    submit:
+    extra_buttons:
+      - icon: (@ config.icon.left )
+        text: Back
+        action:
+          flow: flow.help.menu
+          transfer: true
+      - icon: (@ config.icon.message )
+        text: Contact us
+        action:
+          flow: flow.front.human
+          transfer: true

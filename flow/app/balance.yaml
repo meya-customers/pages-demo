@@ -2,6 +2,7 @@ triggers:
   - button_id: _balance
 
 steps:
+  - mode:
   - header:
       title: Balance
     page:

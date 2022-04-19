@@ -1,0 +1,56 @@
+triggers:
+  - button_id: _help
+
+steps:
+  - mode:
+  - header:
+      title: FAQ
+    page:
+      - info: |
+          # What do you need help with?
+
+          Please select from the options below...
+      - info: |
+          ## Mortgage terminology
+      - buttons:
+          - text: What is APR?
+            result: apr
+          - text: What is a bi-weekly period?
+            result: bi_weekly
+          - text: What is a semi-monthly period?
+            result: semi_monthly
+          - text: What is forclosure?
+            result: forclosure
+      - info: |
+          ## Financial concerns
+      - buttons:
+          - text: How much of my salary should I spend on my mortgage?
+            result: salary_ratio
+          - text: What happens if mortgage rates rise?
+            result: rate_rise
+          - text: What determines mortage rates?
+            result: rate_determination
+      - info: |
+          ## Privacy policy
+      - buttons:
+          - text: How does MortgageTown handle my information?
+            result: handle_information
+          - text: Does MortgageTown send my information to any other parties?
+            result: send_information
+      - info: |
+          ## Other questions
+
+          For any questions not listed here, please do not hesitate to contact us.
+    submit:
+    extra_buttons:
+      - icon: (@ config.icon.message )
+        text: Contact us
+        action:
+          flow: flow.front.human
+          transfer: true
+  - flow: flow.help.details
+    data:
+      question:
+        id: (@ flow.result )
+        text: (@ flow.event.data.text )
+    transfer: true
