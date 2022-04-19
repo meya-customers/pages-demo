@@ -39,7 +39,6 @@ class OnboardingOptionsComponent(Component):
                 rate=5.0,
             ),
         ]
-        print(options)
         return self.respond(data=self.Response(options))
 
     def calculate_option(
