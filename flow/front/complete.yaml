@@ -5,7 +5,7 @@ steps:
   - say: Did you enjoy our service today?
   - rating: faces
     title: Satisfaction
-  #- note: Rating (@ flow.result )
+  - note: Rating (@ flow.result )
   - say: Thank you!
 
   # Wait for the last events to flow through before unlinking
